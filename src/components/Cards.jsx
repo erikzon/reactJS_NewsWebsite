@@ -17,17 +17,18 @@ function Cards() {
   useEffect(() => {
     getPosts();
   }, []);
-  // https://www.prensalibre.com/wp-json/wp/v2/posts?id=11519316 para obtener un post indifidual
+
   return (
     <div className="cards">
       <h1>Ultimas noticias en Guatemala</h1>
       <div className="cards__container">
         {posts.map((post) => (
           <CardItem
+            key={post.id}
             src={post.jetpack_featured_media_url}
             text={post.title.rendered}
             label={`publicado a las ${post.date_gmt.split("T")[1]}`}
-            path="/Noticias"
+            path={`/Noticia/${post.id}`}
           />
         ))}
       </div>
