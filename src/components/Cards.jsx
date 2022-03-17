@@ -17,7 +17,7 @@ function Cards() {
   useEffect(() => {
     // getPosts();
   }, []);
-  
+
   return (
     <div className="cards">
       <h1>Ultimas noticias en Guatemala</h1>
@@ -28,7 +28,7 @@ function Cards() {
               src="images/img-9.jpg"
               text="explore 22"
               label="Adventure"
-              path="/services"
+              path="/Noticias"
             />
           </ul>
         </div>
