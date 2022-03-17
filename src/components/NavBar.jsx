@@ -30,18 +30,13 @@ function NavBar() {
       <nav className="navbar">
         <div className="navbar-container">
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-            TRVL
-            <i className="fab fa-typo3" />
+            NOTI-GT
+            <i className="fa fa-superpowers" />
           </Link>
           <div className="menu-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
           </div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
-            <li className="nav-item">
-              <Link to="/" className="nav-links" onClick={closeMobileMenu}>
-                Home
-              </Link>
-            </li>
             <li className="nav-item">
               <Link
                 to="/Noticias"
@@ -53,11 +48,11 @@ function NavBar() {
             </li>
             <li className="nav-item">
               <Link
-                to="/products"
+                to="/Nosotros"
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
-                Products
+                Nosotros
               </Link>
             </li>
 

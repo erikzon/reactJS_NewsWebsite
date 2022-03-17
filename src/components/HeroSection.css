@@ -6,6 +6,10 @@ video {
   z-index: -1;
 }
 
+i {
+  padding: 0 10px;
+}
+
 .hero-container {
   /* background: url('../../public/images/img-home.jpg') center center/cover
      no-repeat; */
@@ -18,6 +22,7 @@ video {
   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
   object-fit: contain;
 }
+
 .hero-container > h1 {
   color: #fff;
   font-size: 100px;
@@ -38,6 +43,22 @@ video {
 
 .hero-btns .btn {
   margin: 6px;
+}
+
+.btn-nosotros {
+  font-size: 20px;
+  margin: 6px;
+  padding: 8px 20px;
+  border-radius: 2px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  background-color: transparent;
+  color: #fff;
+  padding: 8px 20px;
+  border: 2px solid var(--primary);
+  transition: all 0.3s ease-out;
 }
 
 .fa-play-circle {

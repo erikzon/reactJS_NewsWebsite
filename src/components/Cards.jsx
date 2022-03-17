@@ -4,34 +4,32 @@ import CardItem from "./CardItem";
 import "./Cards.css";
 
 function Cards() {
-  const [post, setPost] = useState([]);
+  const [posts, setPosts] = useState([]);
   async function getPosts() {
     return await fetch("https://www.prensalibre.com/wp-json/wp/v2/posts")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        setPost(data);
+        setPosts(data);
         return data;
       });
   }
   useEffect(() => {
-    // getPosts();
+    getPosts();
   }, []);
-
+  // https://www.prensalibre.com/wp-json/wp/v2/posts?id=11519316 para obtener un post indifidual
   return (
     <div className="cards">
       <h1>Ultimas noticias en Guatemala</h1>
       <div className="cards__container">
-        <div className="cards__wrapper">
-          <ul className="cards__items">
-            <CardItem
-              src="images/img-9.jpg"
-              text="explore 22"
-              label="Adventure"
-              path="/Noticias"
-            />
-          </ul>
-        </div>
+        {posts.map((post) => (
+          <CardItem
+            src={post.jetpack_featured_media_url}
+            text={post.title.rendered}
+            label={`publicado a las ${post.date_gmt.split("T")[1]}`}
+            path="/Noticias"
+          />
+        ))}
       </div>
     </div>
   );

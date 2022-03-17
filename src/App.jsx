@@ -2,7 +2,7 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import Home from "./components/pages/Home";
 import Noticias from "./components/pages/Noticias";
-import Products from "./components/pages/Products";
+import Nosotros from "./components/pages/Nosotros";
 import SignUp from "./components/pages/SignUp";
 import Footer from "./components/Footer";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route path="/" exact element={Home()} />
           <Route path="/noticias" element={Noticias()} />
-          <Route path="/products" element={Products()} />
+          <Route path="/nosotros" element={Nosotros()} />
           <Route path="/sign-up" element={SignUp()} />
         </Routes>
         <Footer />
