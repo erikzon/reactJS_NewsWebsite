@@ -7,22 +7,22 @@ function HeroSection() {
   return (
     <div className="hero-container">
       <video src="/videos/video-2.mp4" autoPlay loop muted />
-      <h1>Adventure Awaits</h1>
-      <p>What are you waiting for?</p>
+      <h1>NOTICIAS GUATEMALA</h1>
+      <p>Portal mas importante de noticias mas actuales.</p>
       <div className="hero-btns">
         <Button
           className="btns"
           buttonStyle="btn--outline"
           buttonSize="btn--large"
         >
-          Get Started
+          Acerca de nosotros
         </Button>
         <Button
           className="btns"
           buttonStyle="btn--primary"
           buttonSize="btn--large"
         >
-          WATCH TRAILER <i className="far fa-play-circle"></i>
+          LEER NOTICIAS
         </Button>
       </div>
     </div>
