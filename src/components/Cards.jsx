@@ -3,12 +3,16 @@ import { useState, useEffect } from "react";
 import { decode } from "html-entities";
 import CardItem from "./CardItem";
 import "./Cards.css";
+import Paginador from "./Paginador";
 
 function Cards() {
   const [posts, setPosts] = useState([]);
-  const [listo, setlisto] = useState(false);
+  const [listo, setlisto] = useState(true);
+  const [pagina, setPagina] = useState(1);
   async function getPosts() {
-    return await fetch("https://www.prensalibre.com/wp-json/wp/v2/posts")
+    return await fetch(
+      `https://www.prensalibre.com/wp-json/wp/v2/posts?page=${pagina}`
+    )
       .then((response) => response.json())
       .then((data) => {
         setPosts(data);
@@ -18,8 +22,9 @@ function Cards() {
   }
 
   useEffect(() => {
-    getPosts();
-  }, []);
+    getPosts(pagina);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [pagina]);
 
   if (listo) {
     return (
@@ -35,6 +40,9 @@ function Cards() {
               path={`/Noticia/${post.id}`}
             />
           ))}
+        </div>
+        <div>
+          <Paginador setPagina={setPagina} Pagina={pagina} />
         </div>
       </div>
     );

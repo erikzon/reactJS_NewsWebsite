@@ -1,0 +1,31 @@
+.Paginador {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  align-items: center;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+
+.btn-paginador {
+  font-size: 1rem;
+  background-color: var(--primary);
+  color: #242424;
+  border: 2px solid rgb(34, 42, 88);
+  padding: 8px 10px;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn-deshabilitado {
+  font-size: 1rem;
+  background-color: var(--primary);
+  color: #a0a0a0;
+  border: 2px solid #a0a0a0;
+  padding: 8px 10px;
+  border-radius: 2px;
+  outline: none;
+  cursor:not-allowed;
+}
