@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { decode } from "html-entities";
 import CardItem from "./CardItem";
 import "./Cards.css";
 
@@ -26,7 +27,7 @@ function Cards() {
           <CardItem
             key={post.id}
             src={post.jetpack_featured_media_url}
-            text={post.title.rendered}
+            text={decode(post.title.rendered)}
             label={`publicado a las ${post.date_gmt.split("T")[1]}`}
             path={`/Noticia/${post.id}`}
           />

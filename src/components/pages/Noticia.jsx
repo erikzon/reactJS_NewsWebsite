@@ -1,6 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { decode } from "html-entities";
 import "../../App.css";
+import "./Noticia.css";
+
 
 function Noticia() {
   const [post, setPost] = useState([]);
@@ -21,6 +24,10 @@ function Noticia() {
       });
   }
 
+  function createMarkup() {
+    return { __html: decode(post.content.rendered) };
+  }
+
   useEffect(() => {
     getPost();
   }, []);
@@ -28,15 +35,23 @@ function Noticia() {
   if (listo) {
     return (
       <>
-        <h1 className="Noticia"> Noticia {post.title.rendered}</h1>
+        <h1
+          className="Noticia"
+          style={{ backgroundImage: `url(${post.jetpack_featured_media_url})` }}
+        >
+          {decode(post.title.rendered)}
+        </h1>
+        <div className="noticia_container">
+          <p dangerouslySetInnerHTML={createMarkup()}></p>
+        </div>
       </>
     );
   } else {
-      return (
-          <>
-          <h1>...cargando</h1>
-          </>
-      )
+    return (
+      <>
+        <h1>...cargando</h1>
+      </>
+    );
   }
 }
 
