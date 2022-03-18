@@ -52,7 +52,7 @@ function NavBar() {
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
-                Nosotros
+                Acerca de Mi
               </Link>
             </li>
 
@@ -62,11 +62,16 @@ function NavBar() {
                 className="nav-links-mobile"
                 onClick={closeMobileMenu}
               >
-                Sign Up
+                Portafolio
               </Link>
             </li>
           </ul>
-          {button && <Button buttonStyle="btn--outline">SIGN UP</Button>}
+
+          {button && (
+            <a href="http://erick-oliva.web.app" className="btn-mobile">
+              <button className="btn-nosotros">Visitar Portafolio</button>
+            </a>
+          )}
         </div>
       </nav>
     </>

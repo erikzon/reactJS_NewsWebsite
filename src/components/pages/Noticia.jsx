@@ -4,7 +4,6 @@ import { decode } from "html-entities";
 import "../../App.css";
 import "./Noticia.css";
 
-
 function Noticia() {
   const [post, setPost] = useState([]);
   const [listo, setListo] = useState(false);
@@ -17,7 +16,6 @@ function Noticia() {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data[0]);
         setPost(data[0]);
         setListo(true);
         return data[0];
@@ -27,9 +25,8 @@ function Noticia() {
   function createMarkup() {
     return { __html: decode(post.content.rendered) };
   }
-
   useEffect(() => {
-    //getPost();
+    getPost();
   }, []);
 
   if (listo) {
@@ -43,7 +40,9 @@ function Noticia() {
         </h1>
         <div className="noticia_container">
           <h3>PUBLICADO EL {post.date_gmt.split("T")[0]}</h3>
-          <a href={post.link} style={{display:"block"}}>FUENTE</a>
+          <a href={post.link} style={{ display: "block" }}>
+            FUENTE
+          </a>
           <p dangerouslySetInnerHTML={createMarkup()}></p>
         </div>
       </>

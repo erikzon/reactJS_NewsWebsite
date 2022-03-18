@@ -79,16 +79,16 @@ i {
   }
 
   .hero-container > p {
-      font-size: 30px;
+    font-size: 30px;
+    text-align: center;
   }
 }
 
-
 .btn-mobile {
-    display: block;
-    text-decoration: none;
+  display: block;
+  text-decoration: none;
 }
 
 .btn {
-    width: 100%;;
+  width: 100%;
 }

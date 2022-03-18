@@ -16,6 +16,7 @@ function Cards() {
         return data;
       });
   }
+
   useEffect(() => {
     getPosts();
   }, []);
@@ -38,7 +39,7 @@ function Cards() {
       </div>
     );
   } else {
-    return <h2>cargando</h2>;
+    return <h2>...cargando</h2>;
   }
 }
 

@@ -18,7 +18,7 @@ function HeroSection() {
       <p>El portal mas importante de noticias en la region.</p>
       <div className="hero-btns">
         <Link to="/nosotros" className="btn-mobile">
-          <button className="btn-nosotros">Acerca de nosotros</button>
+          <button className="btn-nosotros">Acerca de mi</button>
         </Link>
         <Button
           className="btns"
