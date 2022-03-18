@@ -29,7 +29,7 @@ function Noticia() {
   }
 
   useEffect(() => {
-    getPost();
+    //getPost();
   }, []);
 
   if (listo) {
@@ -42,6 +42,8 @@ function Noticia() {
           {decode(post.title.rendered)}
         </h1>
         <div className="noticia_container">
+          <h3>PUBLICADO EL {post.date_gmt.split("T")[0]}</h3>
+          <a href={post.link} style={{display:"block"}}>FUENTE</a>
           <p dangerouslySetInnerHTML={createMarkup()}></p>
         </div>
       </>
