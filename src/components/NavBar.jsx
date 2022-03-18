@@ -56,7 +56,7 @@ function NavBar() {
               </Link>
             </li>
 
-            <li>
+            {/* <li>
               <Link
                 to="/sign-up"
                 className="nav-links-mobile"
@@ -64,14 +64,19 @@ function NavBar() {
               >
                 Portafolio
               </Link>
+            </li> */}
+            <li>
+              <a href="http://erick-oliva.web.app" className="btn-mobile">
+                <button className="btn-nosotros">Visitar Portafolio</button>
+              </a>
             </li>
           </ul>
 
-          {button && (
+          {/* {button && (
             <a href="http://erick-oliva.web.app" className="btn-mobile">
-              <button className="btn-nosotros">Visitar Portafolio</button>
+              <button className="btn-nosotros">VISITAR PORTAFOLIO</button>
             </a>
-          )}
+          )} */}
         </div>
       </nav>
     </>

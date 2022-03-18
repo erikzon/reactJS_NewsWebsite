@@ -20,7 +20,9 @@
 
 figure,
 .slab-light,
-.twitter-tweet, a, video {
+.twitter-tweet,
+a,
+video {
   display: none;
 }
 
@@ -32,16 +34,21 @@ figure,
 }
 
 @media only screen and (max-width: 720px) {
-  
-.noticia_container {
-  width: 95%;
-  padding: 1rem;
-  margin: 0 auto;
-  box-shadow: 5px 10px 18px #888888;
-}
+  .noticia_container {
+    width: 95%;
+    padding: 1rem;
+    margin: 0 auto;
+    box-shadow: 5px 10px 18px #888888;
+  }
+  .Noticia {
+    font-size: 1.6rem;
+  }
 }
 
-.noticia_container p, li, em, strong {
+.noticia_container p,
+li,
+em,
+strong {
   padding: 0.2rem;
   font-size: 1rem;
   font-family: "Merriweather", serif;
@@ -49,7 +56,6 @@ figure,
 }
 
 li {
-    font-style: italic;
-    padding: 0.4rem;
+  font-style: italic;
+  padding: 0.4rem;
 }
-

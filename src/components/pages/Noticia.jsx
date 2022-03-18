@@ -27,6 +27,7 @@ function Noticia() {
   }
   useEffect(() => {
     getPost();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
   if (listo) {
