@@ -23,38 +23,30 @@ function Noticia() {
   }
 
   function createMarkup() {
-    return { __html: decode(post.content.rendered) };
+    return { __html: decode(post?.content?.rendered) };
   }
   useEffect(() => {
     getPost();
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
-  if (listo) {
-    return (
-      <>
-        <h1
-          className="Noticia"
-          style={{ backgroundImage: `url(${post.jetpack_featured_media_url})` }}
-        >
-          {decode(post.title.rendered)}
-        </h1>
-        <div className="noticia_container">
-          <h3>PUBLICADO EL {post.date_gmt.split("T")[0]}</h3>
-          <a href={post.link} style={{ display: "block" }}>
-            FUENTE
-          </a>
-          <p dangerouslySetInnerHTML={createMarkup()}></p>
-        </div>
-      </>
-    );
-  } else {
-    return (
-      <>
-        <h1>...cargando</h1>
-      </>
-    );
-  }
+  return (
+    <>
+      <h1
+        className="Noticia"
+        style={{ backgroundImage: `url(${post?.jetpack_featured_media_url})` }}
+      >
+        {decode(post?.title?.rendered)}
+      </h1>
+      <div className="noticia_container">
+        <h3>PUBLICADO EL {post?.date_gmt?.split("T")[0]}</h3>
+        <a href={post?.link} style={{ display: "block" }}>
+          FUENTE
+        </a>
+        <p dangerouslySetInnerHTML={createMarkup()}></p>
+      </div>
+    </>
+  );
 }
 
 export default Noticia;

@@ -26,29 +26,25 @@ function Cards() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [pagina]);
 
-  if (listo) {
-    return (
-      <div className="cards">
-        <h1>Ultimas noticias en Guatemala</h1>
-        <div className="cards__container">
-          {posts.map((post) => (
-            <CardItem
-              key={post.id}
-              src={post.jetpack_featured_media_url}
-              text={decode(post.title.rendered)}
-              label={`publicado a las ${post.date_gmt.split("T")[1]}`}
-              path={`/Noticia/${post.id}`}
-            />
-          ))}
-        </div>
-        <div>
-          <Paginador setPagina={setPagina} Pagina={pagina} />
-        </div>
+  return (
+    <div className="cards">
+      <h1>Ultimas noticias en Guatemala</h1>
+      <div className="cards__container">
+        {posts?.map((post) => (
+          <CardItem
+            key={post?.id}
+            src={post?.jetpack_featured_media_url}
+            text={decode(post?.title.rendered)}
+            label={`publicado a las ${post?.date_gmt.split("T")[1]}`}
+            path={`/Noticia/${post?.id}`}
+          />
+        ))}
       </div>
-    );
-  } else {
-    return <h2>...cargando</h2>;
-  }
+      <div>
+        <Paginador setPagina={setPagina} Pagina={pagina} />
+      </div>
+    </div>
+  );
 }
 
 export default Cards;
